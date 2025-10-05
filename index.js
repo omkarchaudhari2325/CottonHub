@@ -21,6 +21,13 @@ app.use(
   })
 );
 cloudinaryConnect();
+app.get("/", (req, res) => {
+  res.send({
+    activeStatus: true,
+    error: false,
+    message: "API is working fine",
+  });
+});
 app.use("/api/v1", routes);
 
 app.use(express.json({ limit: "50mb" }));
